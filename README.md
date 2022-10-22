@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![screen.png](https://i.postimg.cc/wBYQs0MW/screen.png)](https://postimg.cc/gx4ZCyvR)
 
 This project allows you to search your favorite YuGiOh cards from the api https://ygoprodeck.com/api-guide/
 
