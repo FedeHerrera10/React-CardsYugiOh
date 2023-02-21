@@ -45,3 +45,8 @@ Steps
 [React-url]: https://reactjs.org/
 [Tailwind]:https://img.shields.io/badge/tailwindcss-0769AD?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwind-url]:https://https://tailwindcss.com/
+
+
+### Live 
+
+https://react-yugioh-card.netlify.app/

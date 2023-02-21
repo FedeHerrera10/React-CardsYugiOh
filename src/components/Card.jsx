@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
+import useYugioh from './hooks/useYugioh';
 
 /* -- -------------Class Tailwindcss -----------------*/
 
@@ -11,7 +12,7 @@ const classP = ` my-2 text-center uppercase text-sm tracking-wide`;
 /* ------------------------------------------------- */
 
 export const Card = ({cardR}) => {
-
+   const {setErrorName } = useYugioh();
    const [loading, setLoading] = useState(false);
 
    const imageLoaded = () => {
@@ -22,7 +23,7 @@ export const Card = ({cardR}) => {
 
   return (
 
-  <Link to="/card/view" state={{ data: cardR }} className={classLink} >
+  <Link to="/card/view" state={{ data: cardR }} className={classLink} onClick={()=>{setErrorName(false)}}>
     <img src={urlImg} alt="icon" className='w-full' onLoad={imageLoaded} style={loading ? {} : {display: 'none'}}/>
     <p className={classP}>{cardR.name}</p>
   </Link>

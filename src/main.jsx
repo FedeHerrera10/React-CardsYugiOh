@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { YugiohProvider } from './components/Context/YugiohProvide'
 import { ErrorPage } from './components/ErrorPage'
 import { Layout} from './components/Layout'
 import { Cards,loader as cardLoader } from './components/pages/Cards'
@@ -35,6 +36,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <YugiohProvider>
     <RouterProvider router={router}/>
+    </YugiohProvider>
   </React.StrictMode>
 )

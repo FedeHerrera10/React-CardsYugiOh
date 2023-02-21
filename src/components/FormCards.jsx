@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Form, useNavigate } from 'react-router-dom'
+import { Form, useNavigate, useNavigation } from 'react-router-dom'
 import { getBuildUrl } from '../data/apiCards';
+import useYugioh from './hooks/useYugioh';
 
 /* -- -------------Class Tailwindcss -----------------*/
 
@@ -32,30 +33,31 @@ export const FormCards = () => {
     const [cardName,setCardName]=useState('');
     const [cardType,setCardTye]=useState('');
     const [cardLevel,setCardLevel]=useState('');
-    const [error,setError]=useState(false);
-
+    const {errorName,setErrorName } = useYugioh();
     const navigate=useNavigate();
 
     const handlerSubmit = (e)=>{
     e.preventDefault();
 
     if(cardName === ''){
-      setError(true);
+      setErrorName(true);
       return;
     }
 
-    setError(false);
+    setErrorName(false);
     const url = getBuildUrl(cardName,cardLevel,cardType);
     setCardLevel('');
     setCardName('');
     setCardTye('');
-
+    
     return navigate(url);
   }
 
+ 
+  
   return (
       <>
-       {error && <p className={classError}> Name is required</p>}
+       {errorName && <p className={classError}> Name is required</p>}
 
       <Form method='get'
         action='/cards'
