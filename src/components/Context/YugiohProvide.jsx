@@ -6,6 +6,7 @@ const YugiohProvider = ({children}) => {
 
     const [data,setData] = useState([]);
     const [errorName,setErrorName] = useState(false);
+    const [showSearch,setShowSearch]= useState(true);
 
     const getData =  async () => {
         
@@ -16,7 +17,9 @@ const YugiohProvider = ({children}) => {
             value={{
                 setData,
                 errorName,
-                setErrorName
+                setErrorName,
+                showSearch,
+                setShowSearch
             }}
         >
             {children}

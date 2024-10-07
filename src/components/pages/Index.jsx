@@ -5,8 +5,6 @@ lg:grid lg:h-screen lg:place-items-center lg:mt-0`;
 
 export const Index = () => {
   return (
-    <div className={classDiv}>
-      <p>Search your cards favorites</p>
-    </div>
+    <></>
   )
 }

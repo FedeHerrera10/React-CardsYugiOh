@@ -2,6 +2,7 @@ import React from 'react'
 import {Outlet } from 'react-router-dom'
 import { FormCards } from './FormCards'
 import { Header } from './Header'
+import useYugioh from './hooks/useYugioh';
 
 /* -- -------------Class Tailwindcss -----------------*/
 
@@ -13,24 +14,31 @@ const divOne = `w-full max-w-md lg:w-1/3 lg:max-w-none
   lg:border-r lg:h-screen
 lg:border-r-purple-700  pt-2`;
 
-const divTwo=`w-full px-5 pb-9 
-flex-col lg:px-0 lg:h-screen flex justify-center lg:justify-start
-lg:overflow-scroll lg:overflow-x-hidden lg:overflow-y-auto`;
+const divTwo=`w-full mt-4
+flex-col lg:px-0  flex justify-center lg:justify-start
+ `;
 
 /* ------------------------------------------------- */
 
 export const Layout = () => {
-
+  const{showSearch}=useYugioh();
  return (
-    <div className={divContainer}>
-      <div className={divOne}>
+    <>
+    
+    <div className='flex flex-col justify-center content-center w-full text-center text-white '>
+      {
+       showSearch &&(
+        <>
         <Header/>
         <FormCards/>
-      </div>
-
+        </>
+       ) 
+      }
+      
       <div className={divTwo}>
         <Outlet/>
       </div>
     </div>
+    </>
   )
 }
