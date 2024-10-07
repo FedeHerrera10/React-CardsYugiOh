@@ -14,8 +14,8 @@ export async function loader ({request}){
   let cardType=url.searchParams.get('type');
   let cardLevel=url.searchParams.get('level');
 
-  //const result=await getCards(cardName,cardType,cardLevel);
-  const result = dataY;
+  const result=await getCards(cardName,cardType,cardLevel);
+  //const result = dataY;
   if(result.error){
      throw new Response('',{
       status:404,
